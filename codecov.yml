@@ -6,16 +6,8 @@ codecov:
 coverage:
   status:
     project:
-      default: false  # Assuming you want to disable the default check
-      maintest:
-        flags:
-          - maintest
-        threshold: null
-        target: auto
-      skipcheck:  # This is the key for the flag-specific configuration
-        flags:
-          - skipcheck  
-        informational: true
+      default:
+        target: 80%
     patch:
       default:
         enabled: yes
