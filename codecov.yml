@@ -5,10 +5,12 @@ codecov:
 
 coverage:
   status:
-    project:
-      default:
-        target: 80%
-    patch:
+    project: #checks for the overall code coverage rate of the repository
+      default: 
+        enabled: yes
+        threshold: null
+        target: auto
+    patch:  #checks for the overall code coverage of the newly added code
       default:
         enabled: yes
         target: 80
