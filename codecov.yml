@@ -6,11 +6,31 @@ codecov:
 coverage:
   status:
     project: #checks for the overall code coverage rate of the repository
+      default:
+        target: auto  # Automatically set based on the base report (e.g., the default branch like main or master)
+        threshold: 0%  # No tolerance for a decrease in coverage.
+    patch:  #checks for the overall code coverage of the newly added code
+      default:
+        enabled: yes
+        target: 100
+        threshold: 40%
+
+
+
+
+codecov:
+  require_ci_to_pass: yes
+  notify:
+    wait_for_ci: yes
+
+coverage:
+  status:
+    project: #checks for the overall code coverage rate of the repository
       default: 
         enabled: yes
         threshold: null
         target: auto
     patch:  #checks for the overall code coverage of the newly added code
       default:
-        enabled: yes
-        target: 80
+        target: 80% # Threshold defines the allowable margin of error below the target, creating a range.
+        threshold: 40% # With a target of 80% and a threshold of 40%, the acceptable coverage range is 40% to 80%.
