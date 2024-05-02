@@ -23,4 +23,9 @@ public class CalculatorTest extends TestCase {
         System.out.println("Running testSubtract");
         assertEquals(1, calculator.subtract(3, 2));
     }
+    
+    public void testDivide() {
+        System.out.println("Running testDivide");
+        assertEquals(2, calculator.divide(4, 2));
+    }
 }
