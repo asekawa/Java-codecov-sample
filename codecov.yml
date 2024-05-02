@@ -7,7 +7,8 @@ coverage:
   status:
     project:
       default:
-        target: 80%
+        target: auto  # Automatically set based on the base report (e.g., the default branch like main or master)
+        threshold: 0%  # No tolerance for a decrease in coverage
     patch:
       default:
         enabled: yes
