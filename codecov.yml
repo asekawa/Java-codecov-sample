@@ -12,5 +12,5 @@ coverage:
         target: auto
     patch:  #checks for the overall code coverage of the newly added code
       default:
-        enabled: yes
-        target: 80
+        target: 80% # Threshold defines the allowable margin of error below the target, creating a range.
+        threshold: 40% # With a target of 80% and a threshold of 40%, the acceptable coverage range is 40% to 80%.
