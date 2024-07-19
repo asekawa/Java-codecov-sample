@@ -17,10 +17,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          
+
       - name: Set ENV Variables
         run: |
-          echo -e '${{ toJson(secrets) }}' | jq -r 'to_entries[] | .key + "=" + .value' >> $GITHUB_ENV 
+          echo -e '${{ toJson(secrets) }}' | jq -r 'to_entries[] | .key + "=" + .value' >> $GITHUB_ENV
+
+      - name: Print Environment Variables
+        run: printenv
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
