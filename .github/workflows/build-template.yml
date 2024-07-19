@@ -2,10 +2,6 @@ name: Build Template
 
 on:
   workflow_call:
-    secrets:
-      CODECOV_TOKEN:
-        required: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
