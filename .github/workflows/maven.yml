@@ -8,5 +8,5 @@ jobs:
   call_workflow:
     name: Run PR Build Workflow
     if: ${{ github.repository_owner == 'your-organization' }}
-    uses: asekawa/PR-Builder/.github/workflows/build-template.yml@main
+    uses: asekawa/Java-codecov-sample/.github/workflows/build-template.yml@main
     secrets: inherit
