@@ -1,12 +1,12 @@
-name: Java CI
+name: PR Build
 
-on:
-  push:
-    branches: [ "**" ]
+on: 
   pull_request:
     branches: [ "**" ]
 
 jobs:
   call_workflow:
-    uses: asekawa/PR-Builder/.github/workflows/pr_builder.yml@main
+    name: Run PR Build Workflow
+    if: ${{ github.repository_owner == 'your-organization' }}
+    uses: asekawa/PR-Builder/.github/workflows/build-template.yml@main
     secrets: inherit
