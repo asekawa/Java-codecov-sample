@@ -8,5 +8,5 @@ on:
 
 jobs:
   call_workflow:
-    uses: asekawa/Java-codecov-sample/.github/workflows/build-template.yml@main
+    uses: asekawa/PR-Builder/.github/workflows/pr_builder.yml@main
     secrets: inherit
