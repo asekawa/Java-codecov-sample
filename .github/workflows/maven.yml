@@ -9,7 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -17,18 +16,13 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
       - name: Generate coverage report
+        if: 
         run: mvn test jacoco:report
-
-      - name: Print Codecov token (masked)
-        run: echo "Codecov token is: ${{ secrets.CODECOV_TOKEN }}"
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
+        
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
